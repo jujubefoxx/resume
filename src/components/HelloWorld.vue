@@ -40,19 +40,31 @@
         <ul>
           <li>
             <label>手机</label>
-            <a href="tel:15168285219" target="_blank">151-6828-5219</a>
+            <a :href="`tel:${infoData.phone}`" target="_blank">{{ infoData.phone }}</a>
           </li>
           <li>
             <label>邮箱</label>
-            <a href="mailto:ze.zh@hotmail.com" target="_blank">ze.zh@hotmail.com</a>
+            <a :href="`mailto:${infoData.email}`" target="_blank">{{ infoData.email }}</a>
           </li>
-<!--          <li>-->
-<!--            <label>个人主页</label>-->
-<!--            <a href="http://0b11111110.com/" target="_blank">0b11111110.com/</a>-->
-<!--          </li>-->
+          <!--          <li>-->
+          <!--            <label>个人主页</label>-->
+          <!--            <a href="http://0b11111110.com/" target="_blank">0b11111110.com/</a>-->
+          <!--          </li>-->
           <li>
             <label>Github</label>
-            <a href="https://github.com/jujubefoxx" target="_blank">https://github.com/jujubefoxx</a>
+            <a :href="`https://${infoData.github}`" target="_blank">{{ infoData.github }}</a>
+          </li>
+        </ul>
+      </section>
+      <!-- 技能点 -->
+      <section class="container-side__skill info-unit">
+        <h2>
+          <i class="fa fa-code" aria-hidden="true"></i>技能点</h2>
+        <hr/>
+        <ul>
+          <li class="container-side__skill-progress" v-for="(item,index) in infoData.skill" :key="index">
+            <label>{{ item.alias }}</label>
+            <el-progress :percentage="item.value" :show-text="false"></el-progress>
           </li>
         </ul>
       </section>
@@ -77,7 +89,17 @@ export default {
         address: '地址',
         sex: '女',
         age: '22',
-        english: 'CET-4'
+        english: 'CET-4',
+        github: 'github.com/jujubefoxx',
+        phone: '13631945290',
+        email: '905141352@qq.com',
+        skill: [
+          {alias: 'HTML', value: '90'},
+          {alias: 'CSS', value: '90'},
+          {alias: 'JavaScript', value: '85'},
+          {alias: 'Vue', value: '85'},
+          {alias: '小程序', value: '85'},
+        ]
       },
       avatarUrl: avatar,
       photoLoading: false,
