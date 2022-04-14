@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <!--    <img alt="Vue logo" src="./assets/logo.png">-->
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
@@ -17,6 +17,10 @@ export default {
 </script>
 
 <style lang="scss">
+@import "assets/scss/variables";
+@import "assets/scss/reset";
+@import "assets/typo.css";
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -1,0 +1,10 @@
+.container {
+    &-side {
+        &__photo {
+            ::v-deep .el-avatar {
+                width:8rem;
+                height: 8rem;
+            }
+        }
+    }
+}
