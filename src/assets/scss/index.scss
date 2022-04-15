@@ -1,10 +1,35 @@
+
 .container {
-    &-side {
-        &__photo {
-            ::v-deep .el-avatar {
-                width:8rem;
-                height: 8rem;
-            }
-        }
+  &-side {
+    position: absolute;
+    width: 20rem;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px #bbb;
+    box-sizing: border-box;
+    padding: 1rem;
+
+    &__photo {
+      text-align: center;
+      margin-bottom: 2rem;
+
+      ::v-deep .el-avatar {
+        width: 8rem;
+        height: 8rem;
+      }
     }
+
+    .info-unit ul li {
+      span {
+        display: inline-block;
+        vertical-align: top;
+        width: 60%;
+      }
+
+      label {
+        display: inline-block;
+        width: 35%;
+      }
+    }
+  }
 }
