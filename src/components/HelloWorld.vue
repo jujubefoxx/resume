@@ -121,7 +121,7 @@
                 <template v-if="list.link">
                   <a :href="link" target="_blank" v-for="(link,num) in list.link" class="container-main__link"
                      :key="num">
-                    <i class="container-icon el-icon-link" aria-hidden="true"></i>代码片段[{{ num + 1 }}]</a>
+                    <i class="container-icon el-icon-link" aria-hidden="true"></i>代码片段{ list.link.length > 1 ? `[${num + 1}]` : '' }}</a>
                 </template>
               </li>
             </ul>
@@ -159,7 +159,8 @@
                 <template v-if="item.link">
                   <a :href="link" target="_blank" v-for="(link,num) in item.link" class="container-main__link"
                      :key="num">
-                    <i class="container-icon el-icon-link" aria-hidden="true"></i>代码片段[{{ num + 1 }}]</a>
+                    <i class="container-icon el-icon-link"
+                       aria-hidden="true"></i>代码片段{{ item.link.length > 1 ? `[${num + 1}]` : '' }}</a>
                 </template>
                 <br/>
                 <i class="container-icon el-icon-data-analysis" aria-hidden="true" v-if="item.result"></i>
@@ -264,7 +265,7 @@ export default {
               link: ['https://blog.csdn.net/lcc0628/article/details/120153466?spm=1001.2014.3001.5502', 'https://blog.csdn.net/lcc0628/article/details/120171828?spm=1001.2014.3001.5502', 'https://blog.csdn.net/lcc0628/article/details/120171990?spm=1001.2014.3001.5502', 'https://blog.csdn.net/lcc0628/article/details/120173167?spm=1001.2014.3001.5502']
             }, {
               html: '配合UI和后端，根据产品需求使用<mark>HTML5+jquery</mark>提供H5页面完成人脸识别和身份证验证，要求<mark>移动端自适应及显示正常</mark>。',
-              link: ['https://blog.csdn.net/lcc0628/article/details/120156307?spm=1001.2014.3001.5501']
+              link: ['https://blog.csdn.net/lcc0628/article/details/120156307?spm=1001.2014.3001.5501']// 代码片段
             }, {
               html: '配合中级前端进行企业端小程序的页面开发。<mark>(微信小程序：源访客企业)</mark>',
             }],
@@ -306,9 +307,9 @@ export default {
             target: '实现一个能够获取随机结果的大转盘并自主进行配置的转盘，h5端仅有转盘和配置功能，小程序端可以实现查询相关菜谱(持续更新)',
             team: '自己',
             contributionHTML: '使用<mark>Vue</mark>进行H5端的开发，完成转盘和转盘配置功能，后续迁移至小程序端，使用<mark>Taro3(Vue)+Taro-UI-Vue</mark>进行微信小程序端的开发，增加了菜谱功能等。',
-            result: '单月新增用户量600人',
-            demoLink: ['https://github.com/jujubefoxx/Taro_HungryTurntable', 'https://github.com/jujubefoxx/WhatDoWeHaveToEat-'],
-            link: ['https://blog.csdn.net/lcc0628/article/details/123225136?spm=1001.2014.3001.5502']
+            result: '单月新增用户量600人',// 效果(可选)
+            demoLink: ['https://github.com/jujubefoxx/Taro_HungryTurntable', 'https://github.com/jujubefoxx/WhatDoWeHaveToEat-'],// demo(可选)
+            link: ['https://blog.csdn.net/lcc0628/article/details/123225136?spm=1001.2014.3001.5502']// 代码片段(可选)
           }],
         //自我评价
         self: '自我评价自我评价自我评价自我评价自我评价',
