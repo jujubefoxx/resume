@@ -83,7 +83,7 @@
       <section class="container-side__qrcode info-unit">
         <h2><i class="container-icon el-icon-chat-round" aria-hidden="true"></i>微信二维码</h2>
         <hr/>
-        <img :src="infoData.qrcode" style="width: 100%;" alt="">
+        <img :src="infoData.qrcode" style="width: 70%;" alt="">
       </section>
     </section>
     <section class="container-main">
@@ -119,9 +119,9 @@
               <li v-for="(list,key) in item.detailList" :key="key">
                 <div v-html="list.html"></div>
                 <template v-if="list.link">
-                  <a :href="link" target="_blank" v-for="(link,num) in list.link"
+                  <a :href="link" target="_blank" v-for="(link,num) in list.link" class="container-main__link"
                      :key="num">
-                    <i class="container-icon fa-link" aria-hidden="true"></i>代码片段[{{ num + 1 }}]</a>
+                    <i class="container-icon el-icon-link" aria-hidden="true"></i>代码片段[{{ num + 1 }}]</a>
                 </template>
               </li>
             </ul>
@@ -138,7 +138,7 @@
             <h3>
               <span>[项目{{ index + 1 }}]{{ item.title }}</span>
               <template v-if="item.demoLink">
-              <span class="container-main__link" v-for="(link,key) in item.demoLink"
+              <span class="container-main__demo" v-for="(link,key) in item.demoLink"
                     :key="key">
                 <a :href="link" target="_blank">Demo{{ key + 1 }}</a>
               </span>
@@ -148,17 +148,22 @@
             <ul class="container-main__content">
               <li>技术栈：{{ item.stack }}</li>
               <li>
-                <i class="container-icon fa-paper-plane-o" aria-hidden="true"></i>
+                <i class="container-icon el-icon-s-promotion" aria-hidden="true"></i>
                 [目标]{{ item.target }}
                 <br/>
-                <i class="container-icon fa-users" aria-hidden="true"></i>
+                <i class="container-icon el-icon-s-custom" aria-hidden="true"></i>
                 [团队]{{ item.team }}
                 <br/>
-                <i class="container-icon fa-bars" aria-hidden="true"></i>
-                <div v-html="item.contributionHTML"></div>
+                <i class="container-icon el-icon-s-data" aria-hidden="true"></i>
+                [贡献]<span v-html="item.contributionHTML"></span>
+                <template v-if="item.link">
+                  <a :href="link" target="_blank" v-for="(link,num) in item.link" class="container-main__link"
+                     :key="num">
+                    <i class="container-icon el-icon-link" aria-hidden="true"></i>代码片段[{{ num + 1 }}]</a>
+                </template>
                 <br/>
-                <i class="container-icon fa-thumbs-o-up" aria-hidden="true"></i>
-                [效果]{{ item.result }}
+                <i class="container-icon el-icon-data-analysis" aria-hidden="true" v-if="item.result"></i>
+                {{ item.result ? `[效果]${item.result}` : '' }}
               </li>
             </ul>
           </li>
@@ -167,7 +172,7 @@
       <!-- 自我评价 -->
       <section class="container-main__self info-unit">
         <h2>
-          <i class="container-icon fa-pencil" aria-hidden="true"></i>自我评价/期望</h2>
+          <i class="container-icon el-icon-edit" aria-hidden="true"></i>自我评价/期望</h2>
         <hr/>
         <p>
           {{ infoData.self }}
@@ -216,14 +221,14 @@ export default {
           {alias: 'HTML', value: 90},
           {alias: 'CSS', value: 90},
           {alias: 'JavaScript', value: 85},
-          {alias: 'Vue', value: 65},
+          {alias: 'Vue2', value: 65},
           {alias: '小程序', value: 85},
         ],
         // 技术栈
         stack: [
           {
             alias: '前端',
-            value: 'Vue(Vue-cli+axios+router)、jQuery、uni-app、Taro、SASS、LESS、Ajax、Bootstrap、Laravel(blade)、ElementUI、VantUI、TaroUI、ant-design-vue'
+            value: 'Vue-cli+axios+router、jQuery、uni-app、Taro、SASS、LESS、Ajax、Bootstrap、Laravel(blade)、ElementUI、VantUI、TaroUI、ant-design-vue'
           },
           // {
           //   alias: '后端',
@@ -283,7 +288,7 @@ export default {
           stack: 'html+SASS+JavaScript+spring+mysql+git',
           target: '仿照淘宝实现一个以二次元用户为主的的电商平台',
           team: '与同学8人',
-          contributionHTML: '[贡献]进行设计的风格进行电商平台的设计稿设计，并根据设计稿使用<mark>HTML5+SASS</mark>进行pc端的静态页面开发。',
+          contributionHTML: '进行设计的风格进行电商平台的设计稿设计，并根据设计稿使用<mark>HTML5+SASS</mark>进行pc端的静态页面开发。',
           result: '获得互联网大赛银奖。'
         }, {
           title: '华夏犬马APP',
@@ -291,7 +296,7 @@ export default {
           stack: 'uni-app+uView+spring+mysql+git',
           target: '实现一个集问卷、视频学习、帖子社区、即使通讯、求职招聘等多功能一体的企业、个人、顾问一端多角色APP',
           team: '与java开发1人',
-          contributionHTML: '[贡献]分析需求使用<mark>Vue-cli+element-ui+Axios</mark>进行后台管理系统开发，功能包括学习视频上传，用户中心，角色管理等，并根据设计稿使用<mark>uni-app</mark>进行前台APP的开发，实现APP的所有需求功能。',
+          contributionHTML: '分析需求使用<mark>Vue-cli+element-ui+Axios</mark>进行后台管理系统开发，功能包括学习视频上传，用户中心，角色管理等，并根据设计稿使用<mark>uni-app</mark>进行前台APP的开发，实现APP的所有需求功能。',
           link: ['https://blog.csdn.net/lcc0628/article/details/121181318?spm=1001.2014.3001.5502', 'https://blog.csdn.net/lcc0628/article/details/121899565?spm=1001.2014.3001.5502', 'https://blog.csdn.net/lcc0628/article/details/122010197?spm=1001.2014.3001.5502']
         },
           {
@@ -300,9 +305,9 @@ export default {
             stack: 'Vue+Taro3(Vue)+Taro-UI-Vue',
             target: '实现一个能够获取随机结果的大转盘并自主进行配置的转盘，h5端仅有转盘和配置功能，小程序端可以实现查询相关菜谱(持续更新)',
             team: '自己',
-            contributionHTML: '[贡献]使用<mark>Vue</mark>进行H5端的开发，完成转盘和转盘配置功能，后续迁移至小程序端，使用<mark>Taro3(Vue)+Taro-UI-Vue</mark>进行微信小程序端的开发，增加了菜谱功能等。',
+            contributionHTML: '使用<mark>Vue</mark>进行H5端的开发，完成转盘和转盘配置功能，后续迁移至小程序端，使用<mark>Taro3(Vue)+Taro-UI-Vue</mark>进行微信小程序端的开发，增加了菜谱功能等。',
             result: '单月新增用户量600人',
-            demoLink: ['https://github.com/jujubefoxx/WhatDoWeHaveToEat-', 'https://github.com/jujubefoxx/Taro_HungryTurntable'],
+            demoLink: ['https://github.com/jujubefoxx/Taro_HungryTurntable', 'https://github.com/jujubefoxx/WhatDoWeHaveToEat-'],
             link: ['https://blog.csdn.net/lcc0628/article/details/123225136?spm=1001.2014.3001.5502']
           }],
         //自我评价

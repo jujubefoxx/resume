@@ -59,13 +59,17 @@
       }
     }
 
-    &__link {
+    &__demo {
       font-size: .5rem;
-      border: 1px solid #4db6ac;
+      border: 1px solid $theme-color;
       padding: 1px 3px;
       -webkit-border-radius: 5px;
       border-radius: 5px;
       margin-left: .5rem;
+    }
+
+    &__link {
+      margin-right: 6px;
     }
 
     &__content {
