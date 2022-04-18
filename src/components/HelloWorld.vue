@@ -81,9 +81,14 @@
       </div>
       <!-- 二维码 -->
       <section class="container-side__qrcode info-unit">
-        <h2><i class="container-icon el-icon-chat-round" aria-hidden="true"></i>微信二维码</h2>
+        <h2><i class="container-icon el-icon-chat-round" aria-hidden="true"></i>二维码</h2>
         <hr/>
-        <img :src="infoData.qrcode" style="width: 70%;" alt="">
+        <div class="container-side__qrcode-container">
+          <div class="container-side__qrcode-list" v-for="(img,index) in infoData.qrcode" :key="index">
+            <img style="width: 100%" :src="img.img" :alt="img.title">
+            <span>{{ img.title }}</span>
+          </div>
+        </div>
       </section>
     </section>
     <section class="container-main">
@@ -121,7 +126,8 @@
                 <template v-if="list.link">
                   <a :href="link" target="_blank" v-for="(link,num) in list.link" class="container-main__link"
                      :key="num">
-                    <i class="container-icon el-icon-link" aria-hidden="true"></i>代码片段{ list.link.length > 1 ? `[${num + 1}]` : '' }}</a>
+                    <i class="container-icon el-icon-link" aria-hidden="true"></i>代码片段{ list.link.length > 1 ? `[${num +
+                    1}]` : '' }}</a>
                 </template>
               </li>
             </ul>
@@ -185,7 +191,9 @@
 
 <script>
 import avatar from "@/assets/images/avatar.jpeg";
-import qrcode from "@/assets/images/wechat.jpg";
+import wechat from "@/assets/images/wechat.png";
+import csdn from "@/assets/images/csdn.png";
+import github from "@/assets/images/github.png";
 
 export default {
   name: 'HelloWorld',
@@ -240,7 +248,7 @@ export default {
             value: 'Photoshop、git、C/C++、SAI、Excel、普通话(二甲)'
           },
         ],
-        qrcode, // 二维码图片
+        qrcode: [{title: 'wechat', img: wechat}, {title: 'CSDN', img: csdn}, {title: 'github', img: github}], // 二维码图片
         avatar, // 头像图片
         // 教育经历
         edu: [{
@@ -316,6 +324,9 @@ export default {
       },
       photoLoading: false,
     }
+  },
+  created() {
+    console.log("感谢您的浏览，期待能够加入贵公司！")
   },
   methods: {}
 }
