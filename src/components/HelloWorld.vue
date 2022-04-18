@@ -26,13 +26,9 @@
             <label>个人信息</label>
             <span>{{ infoData.name }} / {{ infoData.sex }} / {{ infoData.age }}岁</span>
           </li>
-          <li>
-            <label>英语水平</label>
-            <span>{{ infoData.english }}</span>
-          </li>
-          <li>
-            <label>计算机水平</label>
-            <span>{{ infoData.computer }}</span>
+          <li v-for="(item,index) in infoData.level" :key="index">
+            <label>{{ item.title }}</label>
+            <span>{{ item.level }}</span>
           </li>
         </ul>
       </section>
@@ -91,7 +87,6 @@
       </section>
     </section>
     <section class="container-main">
-
       <!-- 教育经历 -->
       <section class="container-main__edu info-unit">
         <h2>
@@ -109,7 +104,6 @@
           </li>
         </ul>
       </section>
-
       <!-- 工作经历 -->
       <section class="container-main__experience info-unit">
         <h2>
@@ -122,7 +116,13 @@
               <time>{{ item.time }}</time>
             </h3>
             <ul class="container-main__experience-content">
-              <li v-for="(list,key) in item.detailList" :key="key" v-html="list.html">
+              <li v-for="(list,key) in item.detailList" :key="key">
+                <div v-html="list.html"></div>
+                <template v-if="list.link">
+                  <a :href="link" target="_blank" v-for="(link,num) in list.link"
+                     :key="num">
+                    <i class="container-icon fa-link" aria-hidden="true"></i>代码片段[{{ num + 1 }}]</a>
+                </template>
               </li>
             </ul>
           </li>
@@ -134,122 +134,44 @@
           <i class="container-icon el-icon-folder-opened" aria-hidden="true"></i>个人项目</h2>
         <hr/>
         <ul>
-          <li>
+          <li v-for="(item,index) in infoData.project" :key="index">
             <h3>
-              <span>[项目1]医学科学数据管理与共享平台</span>
-              <span class="link">
-                                <a href="#" target="_blank">Demo</a>
-                            </span>
-              <time>201X.X-201X.X</time>
+              <span>[项目{{ index + 1 }}]{{ item.title }}</span>
+              <template v-if="item.demoLink">
+              <span class="container-main__link" v-for="(link,key) in item.demoLink"
+                    :key="key">
+                <a :href="link" target="_blank">Demo{{ key + 1 }}</a>
+              </span>
+              </template>
+              <time>{{ item.time }}</time>
             </h3>
-            <ul class="info-content">
-              <li>技术栈：ThinkPHP+MongoDB+Axure</li>
+            <ul class="container-main__content">
+              <li>技术栈：{{ item.stack }}</li>
               <li>
                 <i class="container-icon fa-paper-plane-o" aria-hidden="true"></i>
-                [目标]实现多类型多来源医学科学数据的提交、管理和共享
+                [目标]{{ item.target }}
                 <br/>
                 <i class="container-icon fa-users" aria-hidden="true"></i>
-                [团队]同 2 位同专业同学一起
+                [团队]{{ item.team }}
                 <br/>
                 <i class="container-icon fa-bars" aria-hidden="true"></i>
-                [贡献]完成从
-                <mark>“调研-设计-实现-文档”</mark>
-                等工作，主要负责系统原型、功能框架及数据提交流程、元数据及源数据的管理与共享方案的设计以及系统开发等工作
+                <div v-html="item.contributionHTML"></div>
                 <br/>
                 <i class="container-icon fa-thumbs-o-up" aria-hidden="true"></i>
-                [效果]作品最终取得第三届共享杯国家级竞赛“一等奖” （2/2000）
+                [效果]{{ item.result }}
               </li>
             </ul>
           </li>
-          <li>
-            <h3>
-              <span>[项目2]肿瘤流行病数据可视化</span>
-              <span class="link">
-                                <a href="#" target="_blank">Demo</a>
-                            </span>
-              <time>201X.X-201X.X</time>
-            </h3>
-            <ul class="info-content">
-              <li>技术栈：HTML 5+D3.js+ECharts+MySQL</li>
-              <li>
-                <i class="container-icon fa-paper-plane-o" aria-hidden="true"></i>
-                [目标]实现常见肿瘤流行病数据多维度可视化展示、数据透视及分析
-                <br/>
-                <i class="container-icon fa-users" aria-hidden="true"></i>
-                [团队]与 1 位同学
-                <br/>
-                <i class="container-icon fa-bars" aria-hidden="true"></i>
-                [贡献]分析项目需求，清洗并整理相关数据(扩展第三方知识组织系统和 Google trends 数据)，并用
-                <mark>D3.js</mark>
-                和
-                <mark>ECharts</mark>
-                进行图形化展示以及实现简易自动分析 功能
-                <br/>
-                <i class="container-icon fa-thumbs-o-up" aria-hidden="true"></i>
-                [效果]作品取得第二届共享杯国家级竞赛“特等奖”(1/1500)
-              </li>
-            </ul>
-          </li>
-          <li>
-            <h3>
-              <span>[项目3]肿瘤流行病数据可视化</span>
-              <span class="link">
-                                <a href="#" target="_blank">Demo</a>
-                            </span>
-              <time>201X.X-201X.X</time>
-            </h3>
-            <ul class="info-content">
-              <li>技术栈：HTML 5+D3.js+ECharts+MySQL</li>
-              <li>
-                <i class="container-icon fa-paper-plane-o" aria-hidden="true"></i>
-                [目标]实现常见肿瘤流行病数据多维度可视化展示、数据透视及分析
-                <br/>
-                <i class="container-icon fa-users" aria-hidden="true"></i>
-                [团队]与 1 位同学
-                <br/>
-                <i class="container-icon fa-bars" aria-hidden="true"></i>
-                [贡献]分析项目需求，清洗并整理相关数据(扩展第三方知识组织系统和 Google trends 数据)，并用
-                <mark>D3.js</mark>
-                和
-                <mark>ECharts</mark>
-                进行图形化展示以及实现简易自动分析功能
-                <br/>
-                <i class="container-icon fa-thumbs-o-up" aria-hidden="true"></i>
-                [效果]作品取得第二届共享杯国家级竞赛“特等奖”(1/1500)
-              </li>
-            </ul>
-          </li>
-          <li>
-            <h3>
-              <span>[项目4]肿瘤流行病数据可视化</span>
-              <span class="link">
-                                <a href="#" target="_blank">Demo</a>
-                            </span>
-              <time>201X.X-201X.X</time>
-            </h3>
-            <ul class="info-content">
-              <li>技术栈：HTML 5+D3.js+ECharts+MySQL</li>
-              <li>
-                <i class="container-icon fa-paper-plane-o" aria-hidden="true"></i>
-                [目标]实现常见肿瘤流行病数据多维度可视化展示、数据透视及分析
-                <br/>
-                <i class="container-icon fa-users" aria-hidden="true"></i>
-                [团队]与 1 位
-                <br/>
-                <i class="container-icon fa-bars" aria-hidden="true"></i>
-                [贡献]分析项目需求，清洗并整理相关数据(扩展第三方知识组织系统和 Google trends 数据)，并用
-                <mark>D3.js</mark>
-                和
-                <mark>ECharts</mark>
-                进行图形化展示以及实现简易自动分析 功能
-                <br/>
-                <i class="container-icon fa-thumbs-o-up" aria-hidden="true"></i>
-                [效果]作品取得第二届共享杯国家级竞赛“特等奖”(1/1500)
-              </li>
-            </ul>
-          </li>
-
         </ul>
+      </section>
+      <!-- 自我评价 -->
+      <section class="container-main__self info-unit">
+        <h2>
+          <i class="container-icon fa-pencil" aria-hidden="true"></i>自我评价/期望</h2>
+        <hr/>
+        <p>
+          {{ infoData.self }}
+        </p>
       </section>
     </section>
   </article>
@@ -273,11 +195,22 @@ export default {
         address: '地址', // 地址
         sex: '女', // 性别
         age: '22', // 年龄
-        english: 'CET-4', // 英语等级
+        // 基本等级
+        level: [
+          {
+            title: '英语等级',
+            level: 'CET4'
+          }, {
+            title: '计算机等级',
+            level: '二级'
+          },
+          {
+            title: '普通话等级',
+            level: '二甲'
+          }],
         github: 'github.com/jujubefoxx', // git
         phone: '13631945290', // 电话
         email: '905141352@qq.com', // 邮箱
-        computer: '计算机二级', // 计算机等级
         // 技术点
         skill: [
           {alias: 'HTML', value: 90},
@@ -298,7 +231,7 @@ export default {
           // },
           {
             alias: '其他',
-            value: 'Photoshop、git、C语言、SAI、Excel、普通话(二甲)'
+            value: 'Photoshop、git、C/C++、SAI、Excel、普通话(二甲)'
           },
         ],
         qrcode, // 二维码图片
@@ -316,18 +249,21 @@ export default {
             }]
         }],
         // 工作经历
-        experience: [{
-          company: '广东源禾智智能科技有限公司',
-          job: '前端开发工程师',
-          time: '2021.3-2021.9',
-          detailList: [{
-            html: '深度参与XX项目迭代XX的前端开发工作，独立承担并完成XX、XX、XXXX等功能点的开发，主要维护并修复XX、XX、XX等功能点bug若干。项目采用技术栈<mark>React+React Router+Node.js+SASS</mark>实现<mark>前后端完全分离</mark>',
-          }, {
-            html: '配合UI和后端，根据产品需求提供H5页面嵌入到后台模板，要求<mark>移动端显示正常</mark>。'
-          }, {
-            html: '主要参与XXXXXXX的静态页面开发工作，要求<mark>在支付宝环境下完全兼容</mark>。'
-          }],
-        },
+        experience: [
+          {
+            company: '广东源禾智智能科技有限公司',
+            job: '前端开发工程师',
+            time: '2021.3-2021.9',
+            detailList: [{
+              html: '深度参与智慧园区访客系统小程序项目迭代2.0的前端开发工作，独立承担并完成后台管理系统的开发，分析需求和产品原型图并使用<mark>Vue-cli+element-ui+Axios</mark>进行2.0的后台管理系统开发，主要功能有<mark>角色管理，地图选址，excel导入表单数据和导出表单，公告编辑功能等若干</mark>，并在后期优化时实现了<mark>自适应</mark>的效果。',
+              link: ['https://blog.csdn.net/lcc0628/article/details/120153466?spm=1001.2014.3001.5502', 'https://blog.csdn.net/lcc0628/article/details/120171828?spm=1001.2014.3001.5502', 'https://blog.csdn.net/lcc0628/article/details/120171990?spm=1001.2014.3001.5502', 'https://blog.csdn.net/lcc0628/article/details/120173167?spm=1001.2014.3001.5502']
+            }, {
+              html: '配合UI和后端，根据产品需求使用<mark>HTML5+jquery</mark>提供H5页面完成人脸识别和身份证验证，要求<mark>移动端自适应及显示正常</mark>。',
+              link: ['https://blog.csdn.net/lcc0628/article/details/120156307?spm=1001.2014.3001.5501']
+            }, {
+              html: '配合中级前端进行企业端小程序的页面开发。<mark>(微信小程序：源访客企业)</mark>',
+            }],
+          },
           {
             company: '广东极速网络科技有限公司',
             job: '前端开发工程师',
@@ -339,7 +275,38 @@ export default {
             }, {
               html: '主要参与XXXXXXX的静态页面开发工作，要求<mark>在支付宝环境下完全兼容</mark>。'
             }],
-          }]
+          }],
+        // 项目经历
+        project: [{
+          title: 'Minki二次元电商平台',
+          time: '2018.10-2019.5',
+          stack: 'html+SASS+JavaScript+spring+mysql+git',
+          target: '仿照淘宝实现一个以二次元用户为主的的电商平台',
+          team: '与同学8人',
+          contributionHTML: '[贡献]进行设计的风格进行电商平台的设计稿设计，并根据设计稿使用<mark>HTML5+SASS</mark>进行pc端的静态页面开发。',
+          result: '获得互联网大赛银奖。'
+        }, {
+          title: '华夏犬马APP',
+          time: '2021.10-2022.1',
+          stack: 'uni-app+uView+spring+mysql+git',
+          target: '实现一个集问卷、视频学习、帖子社区、即使通讯、求职招聘等多功能一体的企业、个人、顾问一端多角色APP',
+          team: '与java开发1人',
+          contributionHTML: '[贡献]分析需求使用<mark>Vue-cli+element-ui+Axios</mark>进行后台管理系统开发，功能包括学习视频上传，用户中心，角色管理等，并根据设计稿使用<mark>uni-app</mark>进行前台APP的开发，实现APP的所有需求功能。',
+          link: ['https://blog.csdn.net/lcc0628/article/details/121181318?spm=1001.2014.3001.5502', 'https://blog.csdn.net/lcc0628/article/details/121899565?spm=1001.2014.3001.5502', 'https://blog.csdn.net/lcc0628/article/details/122010197?spm=1001.2014.3001.5502']
+        },
+          {
+            title: '今天吃啥大转盘',
+            time: '2022.3-至今',
+            stack: 'Vue+Taro3(Vue)+Taro-UI-Vue',
+            target: '实现一个能够获取随机结果的大转盘并自主进行配置的转盘，h5端仅有转盘和配置功能，小程序端可以实现查询相关菜谱(持续更新)',
+            team: '自己',
+            contributionHTML: '[贡献]使用<mark>Vue</mark>进行H5端的开发，完成转盘和转盘配置功能，后续迁移至小程序端，使用<mark>Taro3(Vue)+Taro-UI-Vue</mark>进行微信小程序端的开发，增加了菜谱功能等。',
+            result: '单月新增用户量600人',
+            demoLink: ['https://github.com/jujubefoxx/WhatDoWeHaveToEat-', 'https://github.com/jujubefoxx/Taro_HungryTurntable'],
+            link: ['https://blog.csdn.net/lcc0628/article/details/123225136?spm=1001.2014.3001.5502']
+          }],
+        //自我评价
+        self: '自我评价自我评价自我评价自我评价自我评价',
       },
       photoLoading: false,
     }
