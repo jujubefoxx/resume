@@ -126,8 +126,10 @@
                 <template v-if="list.link">
                   <a :href="link" target="_blank" v-for="(link,num) in list.link" class="container-main__link"
                      :key="num">
-                    <i class="container-icon el-icon-link" aria-hidden="true"></i>代码片段{ list.link.length > 1 ? `[${num +
-                    1}]` : '' }}</a>
+                    <i class="container-icon el-icon-link" aria-hidden="true"></i>代码片段{{
+                      list.link.length > 1 ? `[${num +
+                      1}]` : ''
+                    }}</a>
                 </template>
               </li>
             </ul>
@@ -332,11 +334,10 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "src/assets/scss/variables";
-@import "src/assets/scss/reset";
-@import "src/assets/scss/index";
+@import "../assets/scss/index";
+@import "src/assets/scss/article";
 
 @media (min-width: 750px) {
   .container {
