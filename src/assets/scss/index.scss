@@ -67,18 +67,16 @@ mark {
     // padding: 1rem %;
   }
   .container {
-    &-side {
+    .container-side {
       position: static;
       width: 95%;
       margin: 0 auto;
     }
 
-    &-main {
+    .container-main {
       position: static;
-      margin-left: 0;
       width: 95%;
-      margin: 0 auto;
-      margin-top: 1.5rem;
+      margin: 1.5rem auto 0;
     }
   }
   #nav-m {

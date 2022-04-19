@@ -27,9 +27,20 @@
         }
       }
     }
+
     &__photo {
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
       margin-bottom: 2rem;
+
+      ::v-deep .el-avatar {
+        width: 8rem;
+        height: 8rem;
+        margin-bottom: 2rem;
+
+      }
     }
 
     .info-unit {
@@ -60,6 +71,11 @@
     box-shadow: 0 5px 20px #bbb;
     box-sizing: border-box;
     padding: 1rem;
+
+    &__link {
+      margin-right: 6px;
+    }
+
     // height: 75rem;
     .info-unit {
       h2 {
@@ -78,7 +94,7 @@
           h3 {
             .container-main__demo {
               font-size: .5rem;
-              border: 1px solid #4db6ac;
+              border: 1px solid $theme-color;
               padding: 1px 3px;
               -webkit-border-radius: 5px;
               border-radius: 5px;
@@ -108,6 +124,7 @@
   }
 
 }
+
 //移动端适配，右侧时间跨行宽度
 @media screen and (max-width: 1169px) {
 
@@ -118,6 +135,7 @@
       display: inline;
     }
   }
+
   .container-main__project h3 {
     span {
       display: inline;
@@ -133,107 +151,3 @@
   }
 
 }
-//.container {
-//  &-side {
-//    position: absolute;
-//    width: 20rem;
-//    background: #fff;
-//    border-radius: 5px;
-//    box-shadow: 0 5px 20px #bbb;
-//    box-sizing: border-box;
-//    padding: 1rem;
-//
-//    &__qrcode {
-//      &-container {
-//        display: flex;
-//        width: 100%;
-//      }
-//
-//      &-list {
-//        display: flex;
-//        flex-direction: column;
-//        justify-content: center;
-//        align-items: center;
-//
-//        img {
-//          max-width: 400px;
-//        }
-//      }
-//    }
-//
-//    &__photo {
-//      text-align: center;
-//      margin-bottom: 2rem;
-//
-//      ::v-deep .el-avatar {
-//        width: 8rem;
-//        height: 8rem;
-//      }
-//    }
-//
-//    .info-unit ul li {
-//      span {
-//        display: inline-block;
-//        vertical-align: top;
-//        width: 60%;
-//      }
-//
-//      label {
-//        display: inline-block;
-//        width: 35%;
-//      }
-//    }
-//  }
-//
-//  &-main {
-//    position: relative;
-//    margin-left: 22rem;
-//    background: #fff;
-//    border-radius: 5px;
-//    box-shadow: 0 5px 20px #bbb;
-//    box-sizing: border-box;
-//    padding: 1rem;
-//
-//
-//    .info-unit ul {
-//      box-sizing: border-box;
-//      padding-left: 1.2rem;
-//      padding-right: 0.8rem;
-//
-//      li {
-//        margin-bottom: 1rem;
-//        list-style: disc;
-//
-//        h3 time {
-//          text-align: right;
-//          float: right;
-//        }
-//      }
-//    }
-//
-//
-//    &__demo {
-//      font-size: .5rem;
-//      border: 1px solid $theme-color;
-//      padding: 1px 3px;
-//      -webkit-border-radius: 5px;
-//      border-radius: 5px;
-//      margin-left: .5rem;
-//    }
-//
-//    &__link {
-//      margin-right: 6px;
-//    }
-//
-//    &__content {
-//      li {
-//        list-style: circle;
-//        margin: 0;
-//      }
-//
-//      .container-icon {
-//        font-size: 1em;
-//      }
-//    }
-//  }
-//}

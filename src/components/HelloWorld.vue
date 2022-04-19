@@ -271,10 +271,10 @@ export default {
             job: '前端开发工程师',
             time: '2021.3-2021.9',
             detailList: [{
-              html: '深度参与智慧园区访客系统小程序项目迭代2.0的前端开发工作，独立承担并完成后台管理系统的开发，分析需求和产品原型图并使用<mark>Vue-cli+element-ui+Axios</mark>进行2.0的后台管理系统开发，主要功能有<mark>角色管理，地图选址，excel导入表单数据和导出表单，公告编辑功能等若干</mark>，并在后期优化时实现了<mark>自适应</mark>的效果。',
+              html: '深度参与智慧园区访客系统小程序项目迭代2.0的前端开发工作，独立承担并完成后台管理系统的开发，分析需求和产品原型图并使用<mark>Vue-cli + element-ui + Axios</mark>进行2.0的后台管理系统开发，主要功能有<mark>角色管理，地图选址，excel导入表单数据和导出表单，公告编辑功能等若干</mark>，并在后期优化时实现了<mark>自适应</mark>的效果。',
               link: ['https://blog.csdn.net/lcc0628/article/details/120153466?spm=1001.2014.3001.5502', 'https://blog.csdn.net/lcc0628/article/details/120171828?spm=1001.2014.3001.5502', 'https://blog.csdn.net/lcc0628/article/details/120171990?spm=1001.2014.3001.5502', 'https://blog.csdn.net/lcc0628/article/details/120173167?spm=1001.2014.3001.5502']
             }, {
-              html: '配合UI和后端，根据产品需求使用<mark>HTML5+jquery</mark>提供H5页面完成人脸识别和身份证验证，要求<mark>移动端自适应及显示正常</mark>。',
+              html: '配合UI和后端，根据产品需求使用<mark>HTML5 + jquery</mark>提供H5页面完成人脸识别和身份证验证，要求<mark>移动端自适应及显示正常</mark>。',
               link: ['https://blog.csdn.net/lcc0628/article/details/120156307?spm=1001.2014.3001.5501']// 代码片段
             }, {
               html: '配合中级前端进行企业端小程序的页面开发。<mark>(微信小程序：源访客企业)</mark>',
@@ -285,7 +285,7 @@ export default {
             job: '前端开发工程师',
             time: '2021.9-至今',
             detailList: [{
-              html: '深度参与公司主线产品「XXXX」的前端开发工作，完成帖子快捷回复、<mark>全站图片懒加载</mark>、活动banner、帖子管理（使用Yii框架）等功能。项目采用技术栈phpWind+NAMP。'
+              html: '深度参与公司主线产品「XXXX」的前端开发工作，完成帖子快捷回复、<mark>全站图片懒加载</mark>、活动banner、帖子管理（使用Yii框架）等功能。项目采用技术栈phpWind + NAMP。'
             }, {
               html: '配合UI和后端，根据产品需求提供H5页面嵌入到后台模板，要求<mark>移动端显示正常</mark>。'
             }, {
@@ -296,15 +296,15 @@ export default {
         project: [{
           title: 'Minki二次元电商平台',
           time: '2018.10-2019.5',
-          stack: 'html+SASS+JavaScript+spring+mysql+git',
+          stack: 'html + SASS + JavaScript + spring + mysql + git',
           target: '仿照淘宝实现一个以二次元用户为主的的电商平台',
           team: '与同学8人',
-          contributionHTML: '进行设计的风格进行电商平台的设计稿设计，并根据设计稿使用<mark>HTML5+SASS</mark>进行pc端的静态页面开发。',
+          contributionHTML: '进行设计的风格进行电商平台的设计稿设计，并根据设计稿使用<mark>HTML5 + SASS</mark>进行pc端的静态页面开发。',
           result: '获得互联网大赛银奖。'
         }, {
           title: '华夏犬马APP',
           time: '2021.10-2022.1',
-          stack: 'uni-app+uView+spring+mysql+git',
+          stack: 'uni-app + uView + spring + mysql + git',
           target: '实现一个集问卷、视频学习、帖子社区、即使通讯、求职招聘等多功能一体的企业、个人、顾问一端多角色APP',
           team: '与java开发1人',
           contributionHTML: '分析需求使用<mark>Vue-cli+element-ui+Axios</mark>进行后台管理系统开发，功能包括学习视频上传，用户中心，角色管理等，并根据设计稿使用<mark>uni-app</mark>进行前台APP的开发，实现APP的所有需求功能。',
@@ -313,10 +313,10 @@ export default {
           {
             title: '今天吃啥大转盘',
             time: '2022.3-至今',
-            stack: 'Vue+Taro3(Vue)+Taro-UI-Vue',
+            stack: 'Vue + Taro3(Vue) + Taro-UI-Vue',
             target: '实现一个能够获取随机结果的大转盘并自主进行配置的转盘，h5端仅有转盘和配置功能，小程序端可以实现查询相关菜谱(持续更新)',
             team: '自己',
-            contributionHTML: '使用<mark>Vue</mark>进行H5端的开发，完成转盘和转盘配置功能，后续迁移至小程序端，使用<mark>Taro3(Vue)+Taro-UI-Vue</mark>进行微信小程序端的开发，增加了菜谱功能等。',
+            contributionHTML: '使用<mark>Vue</mark>进行H5端的开发，完成转盘和转盘配置功能，后续迁移至小程序端，使用<mark>Taro3(Vue) + Taro-UI-Vue</mark>进行微信小程序端的开发，增加了菜谱功能等。',
             result: '单月新增用户量600人',// 效果(可选)
             demoLink: ['https://github.com/jujubefoxx/Taro_HungryTurntable', 'https://github.com/jujubefoxx/WhatDoWeHaveToEat-'],// demo(可选)
             link: ['https://blog.csdn.net/lcc0628/article/details/123225136?spm=1001.2014.3001.5502']// 代码片段(可选)
