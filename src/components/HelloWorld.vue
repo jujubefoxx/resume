@@ -199,7 +199,6 @@
 <script>
 import avatar from "@/assets/images/avatar.jpeg";
 import wechat from "@/assets/images/wechat.png";
-import csdn from "@/assets/images/csdn.png";
 import github from "@/assets/images/github.png";
 
 export default {
@@ -248,7 +247,7 @@ export default {
             value: 'git、C/C++'
           },
         ],
-        qrcode: [{title: 'wechat', img: wechat}, {title: 'CSDN', img: csdn}, {title: 'github', img: github}], // 二维码图片
+        qrcode: [{title: 'wechat', img: wechat}, {title: 'github', img: github}], // 二维码图片
         avatar, // 头像图片
         // 教育经历
         edu: [{
