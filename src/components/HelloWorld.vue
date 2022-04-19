@@ -145,6 +145,11 @@
           <li v-for="(item,index) in infoData.project" :key="index">
             <h3>
               <span>[项目{{ index + 1 }}]{{ item.title }}</span>
+              <template v-if="item.file">
+                <a class="container-main__demo" :href="item.file.link" :download="item.file.title">{{
+                    item.file.type
+                  }}文件</a>
+              </template>
               <template v-if="item.demoLink">
               <span class="container-main__demo" v-for="(link,key) in item.demoLink"
                     :key="key">
@@ -199,9 +204,6 @@ import github from "@/assets/images/github.png";
 
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String,
-  },
   data() {
     return {
       switchValue: false,
@@ -308,6 +310,7 @@ export default {
           target: '实现一个集问卷、视频学习、帖子社区、即使通讯、求职招聘等多功能一体的企业、个人、顾问一端多角色APP',
           team: '与java开发1人',
           contributionHTML: '分析需求使用<mark>Vue-cli+element-ui+Axios</mark>进行后台管理系统开发，功能包括学习视频上传，用户中心，角色管理等，并根据设计稿使用<mark>uni-app</mark>进行前台APP的开发，实现APP的所有需求功能。',
+          file: {link: '/huaxiaquanma.apk', title: '华夏犬马.apk', type: 'apk'},
           link: ['https://blog.csdn.net/lcc0628/article/details/121181318?spm=1001.2014.3001.5502', 'https://blog.csdn.net/lcc0628/article/details/121899565?spm=1001.2014.3001.5502', 'https://blog.csdn.net/lcc0628/article/details/122010197?spm=1001.2014.3001.5502']
         },
           {
@@ -317,7 +320,7 @@ export default {
             target: '实现一个能够获取随机结果的大转盘并自主进行配置的转盘，h5端仅有转盘和配置功能，小程序端可以实现查询相关菜谱(持续更新)',
             team: '自己',
             contributionHTML: '使用<mark>Vue</mark>进行H5端的开发，完成转盘和转盘配置功能，后续迁移至小程序端，使用<mark>Taro3(Vue) + Taro-UI-Vue</mark>进行微信小程序端的开发，增加了菜谱功能等。',
-            result: '单月新增用户量600人',// 效果(可选)
+            result: '单月新增用户量600人(微信小程序：今天吃啥大转盘)',// 效果(可选)
             demoLink: ['https://github.com/jujubefoxx/Taro_HungryTurntable', 'https://github.com/jujubefoxx/WhatDoWeHaveToEat-'],// demo(可选)
             link: ['https://blog.csdn.net/lcc0628/article/details/123225136?spm=1001.2014.3001.5502']// 代码片段(可选)
           }],
