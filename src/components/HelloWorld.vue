@@ -145,6 +145,11 @@
           <li v-for="(item,index) in infoData.project" :key="index">
             <h3>
               <span>[项目{{ index + 1 }}]{{ item.title }}</span>
+              <template v-if="item.file">
+                <a class="container-main__demo" :href="item.file.link" :download="item.file.title">{{
+                    item.file.type
+                  }}文件</a>
+              </template>
               <template v-if="item.demoLink">
               <span class="container-main__demo" v-for="(link,key) in item.demoLink"
                     :key="key">
@@ -199,9 +204,6 @@ import github from "@/assets/images/github.png";
 
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String,
-  },
   data() {
     return {
       switchValue: false,
@@ -285,6 +287,11 @@ export default {
           target: '实现一个集XX、XX、XXX、XXX、XXXX等多功能一体的XXXXAPP',
           team: '与java开发1人',
           contributionHTML: '分析需求使用<mark>Vue-cli+element-ui+Axios</mark>进行后台管理系统开发，功能包括XXXXX等，并根据设计稿使用<mark>uni-app</mark>进行前台APP的开发，实现APP的所有需求功能。',
+          // file: {
+          //   link: '', // 文件地址
+          //   type: '', // 文件类型,
+          //   title: '' // 文件名
+          // }, // 文件(可选)
           // 代码片段(可选)
           link: ['https://blog.csdn.net/lcc0628/article/details/121181318?spm=1001.2014.3001.5502', 'https://blog.csdn.net/lcc0628/article/details/121899565?spm=1001.2014.3001.5502', 'https://blog.csdn.net/lcc0628/article/details/122010197?spm=1001.2014.3001.5502']
         },
