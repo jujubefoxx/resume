@@ -215,18 +215,14 @@ export default {
         level: [
           {
             title: '英语等级',
-            level: 'CET4'
+            level: 'x级'
           }, {
             title: '计算机等级',
-            level: '二级'
-          },
-          {
-            title: '普通话等级',
-            level: '二甲'
+            level: 'x级'
           }],
         github: 'github.com/jujubefoxx', // git
-        phone: '13631945290', // 电话
-        email: '905141352@qq.com', // 邮箱
+        phone: '1XXXXXXXXXX', // 电话
+        email: 'XXXXXXXXXX@XX.com', // 邮箱
         // 技术点
         skill: [
           {alias: 'HTML', value: 90},
@@ -239,7 +235,7 @@ export default {
         stack: [
           {
             alias: '前端',
-            value: 'Vue-cli+axios+router、jQuery、uni-app、Taro、SASS、LESS、Ajax、Bootstrap、Laravel(blade)、ElementUI、VantUI、TaroUI、ant-design-vue'
+            value: 'jQuery、uni-app、Taro、SASS、LESS、Ajax、Bootstrap、Laravel(blade)'
           },
           // {
           //   alias: '后端',
@@ -247,67 +243,49 @@ export default {
           // },
           {
             alias: '其他',
-            value: 'Photoshop、git、C/C++、SAI、Excel、普通话(二甲)'
+            value: 'git、C/C++'
           },
         ],
         qrcode: [{title: 'wechat', img: wechat}, {title: 'CSDN', img: csdn}, {title: 'github', img: github}], // 二维码图片
         avatar, // 头像图片
         // 教育经历
         edu: [{
-          school: '东莞理工学院 - 电气工程及其自动化专业(本科)',
-          time: '2017.9-2021.7',
+          school: 'XXXX大学 -XXXXXXXXXX专业(X科)',
+          time: '201X.9-202X.7',
+          //其他内容
           other: [
-            {title: '相关课程', content: 'C/C++(96)、matlab(98)、PLC编程(88)'},
-            {title: '获得奖项', content: '校挑战杯三等奖、互联网大赛银奖'},
+            {title: '相关课程', content: 'XX(分数)、XX(分数)'},
+            {title: '获得奖项', content: '获得奖项'},
             {
               title: '在校经历',
-              content: '大一大二期间担任院团委学生会外联部成员、校职协宣传部部长，组织策划过多场校级大型学生活动，连续两年担任校园大型招聘会线上物料制作者及线下活动负责人；大三期间任职学生助理班主任，协助班主任引导新生50余人的班级进行在校期间的学习和活动'
+              content: '……'
             }]
         }],
         // 工作经历
         experience: [
           {
-            company: '广东源禾智智能科技有限公司',
+            company: 'XXXXX公司',
             job: '前端开发工程师',
-            time: '2021.3-2021.9',
+            time: '202X.X-202X.X',
             detailList: [{
-              html: '深度参与智慧园区访客系统小程序项目迭代2.0的前端开发工作，独立承担并完成后台管理系统的开发，分析需求和产品原型图并使用<mark>Vue-cli + element-ui + Axios</mark>进行2.0的后台管理系统开发，主要功能有<mark>角色管理，地图选址，excel导入表单数据和导出表单，公告编辑功能等若干</mark>，并在后期优化时实现了<mark>自适应</mark>的效果。',
-              link: ['https://blog.csdn.net/lcc0628/article/details/120153466?spm=1001.2014.3001.5502', 'https://blog.csdn.net/lcc0628/article/details/120171828?spm=1001.2014.3001.5502', 'https://blog.csdn.net/lcc0628/article/details/120171990?spm=1001.2014.3001.5502', 'https://blog.csdn.net/lcc0628/article/details/120173167?spm=1001.2014.3001.5502']
+              html: '深度参与XXXXXX小程序项目迭代X.0的XX开发工作，独立承担并完成XXXX的开发，分析需求和产品原型图并使用<mark>Vue-cli + element-ui + Axios</mark>进行XXXXX系统开发，主要有<mark>XXXXXXXXXXX功能等若干</mark>，并在后期优化时实现了<mark>自适应</mark>的效果。',
+              //代码片段/博客文章
+              link: ['www.baidu.com']
             }, {
-              html: '配合UI和后端，根据产品需求使用<mark>HTML5 + jquery</mark>提供H5页面完成人脸识别和身份证验证，要求<mark>移动端自适应及显示正常</mark>。',
-              link: ['https://blog.csdn.net/lcc0628/article/details/120156307?spm=1001.2014.3001.5501']// 代码片段
+              html: '配合UI和后端，根据产品需求使用<mark>HTML5 + jquery</mark>提供H5页面完成XXXXX，要求<mark>移动端自适应及显示正常</mark>。',
             }, {
-              html: '配合中级前端进行企业端小程序的页面开发。<mark>(微信小程序：源访客企业)</mark>',
-            }],
-          },
-          {
-            company: '广东极速网络科技有限公司',
-            job: '前端开发工程师',
-            time: '2021.9-至今',
-            detailList: [{
-              html: '深度参与公司主线产品「XXXX」的前端开发工作，完成帖子快捷回复、<mark>全站图片懒加载</mark>、活动banner、帖子管理（使用Yii框架）等功能。项目采用技术栈phpWind + NAMP。'
-            }, {
-              html: '配合UI和后端，根据产品需求提供H5页面嵌入到后台模板，要求<mark>移动端显示正常</mark>。'
-            }, {
-              html: '主要参与XXXXXXX的静态页面开发工作，要求<mark>在支付宝环境下完全兼容</mark>。'
+              html: '配合XXXX进行XXX小程序的页面开发。',
             }],
           }],
         // 项目经历
         project: [{
-          title: 'Minki二次元电商平台',
-          time: '2018.10-2019.5',
-          stack: 'html + SASS + JavaScript + spring + mysql + git',
-          target: '仿照淘宝实现一个以二次元用户为主的的电商平台',
-          team: '与同学8人',
-          contributionHTML: '进行设计的风格进行电商平台的设计稿设计，并根据设计稿使用<mark>HTML5 + SASS</mark>进行pc端的静态页面开发。',
-          result: '获得互联网大赛银奖。'
-        }, {
-          title: '华夏犬马APP',
+          title: 'XXXXAPP',
           time: '2021.10-2022.1',
           stack: 'uni-app + uView + spring + mysql + git',
-          target: '实现一个集问卷、视频学习、帖子社区、即使通讯、求职招聘等多功能一体的企业、个人、顾问一端多角色APP',
+          target: '实现一个集XX、XX、XXX、XXX、XXXX等多功能一体的XXXXAPP',
           team: '与java开发1人',
-          contributionHTML: '分析需求使用<mark>Vue-cli+element-ui+Axios</mark>进行后台管理系统开发，功能包括学习视频上传，用户中心，角色管理等，并根据设计稿使用<mark>uni-app</mark>进行前台APP的开发，实现APP的所有需求功能。',
+          contributionHTML: '分析需求使用<mark>Vue-cli+element-ui+Axios</mark>进行后台管理系统开发，功能包括XXXXX等，并根据设计稿使用<mark>uni-app</mark>进行前台APP的开发，实现APP的所有需求功能。',
+          // 代码片段(可选)
           link: ['https://blog.csdn.net/lcc0628/article/details/121181318?spm=1001.2014.3001.5502', 'https://blog.csdn.net/lcc0628/article/details/121899565?spm=1001.2014.3001.5502', 'https://blog.csdn.net/lcc0628/article/details/122010197?spm=1001.2014.3001.5502']
         },
           {
@@ -319,7 +297,6 @@ export default {
             contributionHTML: '使用<mark>Vue</mark>进行H5端的开发，完成转盘和转盘配置功能，后续迁移至小程序端，使用<mark>Taro3(Vue) + Taro-UI-Vue</mark>进行微信小程序端的开发，增加了菜谱功能等。',
             result: '单月新增用户量600人',// 效果(可选)
             demoLink: ['https://github.com/jujubefoxx/Taro_HungryTurntable', 'https://github.com/jujubefoxx/WhatDoWeHaveToEat-'],// demo(可选)
-            link: ['https://blog.csdn.net/lcc0628/article/details/123225136?spm=1001.2014.3001.5502']// 代码片段(可选)
           }],
         //自我评价
         self: '自我评价自我评价自我评价自我评价自我评价',
