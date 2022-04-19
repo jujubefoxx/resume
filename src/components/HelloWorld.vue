@@ -328,7 +328,7 @@ export default {
     }
   },
   created() {
-    console.log("感谢您的浏览，期待能够加入贵公司！")
+    console.log("感谢您这么好看还来看的我网站！")
   },
   methods: {}
 }
