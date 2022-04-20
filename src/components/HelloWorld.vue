@@ -126,7 +126,7 @@
                 <!--项目地址-->
                 <div v-if="list.project">
                   项目地址：
-                  <a :href="project.url||'javascript:;'" :target="project.url?'_blank':'_self'"
+                  <a :href="project.url||'javascript:;'" :target="project.url ? '_blank' : '_self'"
                      v-for="(project,i) in list.project"
                      class="container-main__link"
                      :key="i">
@@ -294,7 +294,10 @@ export default {
               html: '配合UI和后端，根据产品需求使用<mark>HTML5 + jquery</mark>提供H5页面完成人脸识别和身份证验证，要求<mark>移动端自适应及显示正常</mark>。',
               link: ['https://blog.csdn.net/lcc0628/article/details/120156307?spm=1001.2014.3001.5501']// 代码片段
             }, {
-              html: '配合中级前端进行企业端小程序的页面开发。<mark>(微信小程序：源访客企业)</mark>',
+              html: '配合中级前端进行企业端小程序的页面开发。',
+              project: [
+                {title: 'pc端/m端', url: 'https://www.qiumiwu.com'}, // 项目地址，（可选）
+                {title: '小程序：源访客企业(微信)'}] // 项目地址
             }],
           },
           {
