@@ -123,13 +123,28 @@
             <ul class="container-main__experience-content">
               <li v-for="(list,key) in item.detailList" :key="key">
                 <div v-html="list.html"></div>
+                <!--项目地址-->
+                <div  v-if="list.project">
+                  项目地址：
+                  <a :href="project.url||'javascript:;'" :target="project.url?'_blank':'_self'"
+                     v-for="(project,i) in list.project"
+                     class="container-main__link"
+                     :key="i">
+                    {{
+                      list.project.length > 1 ? `[${i +
+                      1}]` : ''
+                    }}
+                    <i class="container-icon el-icon-link" aria-hidden="true" v-if="project.url"></i>{{ project.title }}</a>
+                </div>
+                <!--代码片段-->
                 <template v-if="list.link">
                   <a :href="link" target="_blank" v-for="(link,num) in list.link" class="container-main__link"
                      :key="num">
-                    <i class="container-icon el-icon-link" aria-hidden="true"></i>代码片段{{
+                    {{
                       list.link.length > 1 ? `[${num +
                       1}]` : ''
-                    }}</a>
+                    }}
+                    <i class="container-icon el-icon-link" aria-hidden="true"></i>代码片段</a>
                 </template>
               </li>
             </ul>
@@ -236,7 +251,7 @@ export default {
         stack: [
           {
             alias: '前端',
-            value: 'jQuery、uni-app、Taro、SASS、LESS、Ajax、Bootstrap、Laravel(blade)'
+            value: 'jQuery、uni-app、Taro、SASS、LESS、Ajax、Bootstrap、Laravel'
           },
           // {
           //   alias: '后端',
@@ -274,6 +289,10 @@ export default {
               link: ['www.baidu.com']
             }, {
               html: '配合UI和后端，根据产品需求使用<mark>HTML5 + jquery</mark>提供H5页面完成XXXXX，要求<mark>移动端自适应及显示正常</mark>。',
+              project: [
+                {title: '极速有料h5', url: 'https://h.jsty.com'}, // 项目地址，（可选）
+                {title: '小程序：极速有料(微信、头条、百度、QQ)'}, // 项目地址
+                {title: '今天好料官网', url: 'https://hl.tiyipu.com/'}] // 项目地址
             }, {
               html: '配合XXXX进行XXX小程序的页面开发。',
             }],
@@ -287,7 +306,7 @@ export default {
           team: '与java开发1人',
           contributionHTML: '分析需求使用<mark>Vue-cli+element-ui+Axios</mark>进行后台管理系统开发，功能包括XXXXX等，并根据设计稿使用<mark>uni-app</mark>进行前台APP的开发，实现APP的所有需求功能。',
           // file: {
-          //   link: '', // 文件地址
+          //   link: '', // 文件地址 放在public下
           //   type: '', // 文件类型,
           //   title: '' // 文件名
           // }, // 文件(可选)
