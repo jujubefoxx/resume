@@ -123,13 +123,28 @@
             <ul class="container-main__experience-content">
               <li v-for="(list,key) in item.detailList" :key="key">
                 <div v-html="list.html"></div>
+                <!--项目地址-->
+                <div v-if="list.project">
+                  项目地址：
+                  <a :href="project.url||'javascript:;'" :target="project.url?'_blank':'_self'"
+                     v-for="(project,i) in list.project"
+                     class="container-main__link"
+                     :key="i">
+                    {{
+                      list.project.length > 1 ? `[${i +
+                      1}]` : ''
+                    }}
+                    <i class="container-icon el-icon-link" aria-hidden="true" v-if="project.url"></i>{{ project.title }}</a>
+                </div>
+                <!--代码片段-->
                 <template v-if="list.link">
                   <a :href="link" target="_blank" v-for="(link,num) in list.link" class="container-main__link"
                      :key="num">
-                    <i class="container-icon el-icon-link" aria-hidden="true"></i>代码片段{{
+                    {{
                       list.link.length > 1 ? `[${num +
                       1}]` : ''
-                    }}</a>
+                    }}
+                    <i class="container-icon el-icon-link" aria-hidden="true"></i>代码片段</a>
                 </template>
               </li>
             </ul>
@@ -173,7 +188,7 @@
                   <a :href="link" target="_blank" v-for="(link,num) in item.link" class="container-main__link"
                      :key="num">
                     <i class="container-icon el-icon-link"
-                       aria-hidden="true"></i>代码片段{{ item.link.length > 1 ? `[${num + 1}]` : '' }}</a>
+                       aria-hidden="true"></i>{{ item.link.length > 1 ? `[${num + 1}]` : '' }}代码片段</a>
                 </template>
                 <br/>
                 <i class="container-icon el-icon-data-analysis" aria-hidden="true" v-if="item.result"></i>
@@ -287,11 +302,21 @@ export default {
             job: '前端开发工程师',
             time: '2021.9-至今',
             detailList: [{
-              html: '深度参与公司主线产品「XXXX」的前端开发工作，完成帖子快捷回复、<mark>全站图片懒加载</mark>、活动banner、帖子管理（使用Yii框架）等功能。项目采用技术栈phpWind + NAMP。'
+              link: ['https://blog.csdn.net/lcc0628/article/details/120156307?spm=1001.2014.3001.5501'],// 代码片段
+              html: '配合UI和后端，深度参与公司主线产品「球迷屋」web端、pc端、m端的迭代和开发工作，完成赛程列表<mark>WebSocket</mark>更新、CBA数据页、专题详情、动态视频列表、点击数据统计等功能，修复已知bug及优化代码若干。项目采用技术栈Taro + Vue + Jquery + Laravel实现前后端分离',
+              project: [
+                {title: 'pc端/m端', url: 'https://www.qiumiwu.com'}, // 项目地址，（可选）
+                {title: '小程序：球迷屋(微信、头条、百度、QQ)'}] // 项目地址
             }, {
-              html: '配合UI和后端，根据产品需求提供H5页面嵌入到后台模板，要求<mark>移动端显示正常</mark>。'
+              html: '配合后端根据产品需求增加球迷屋编辑后台管理系统和兼职后台管理系统功能，完成球队球员信息、任务、资讯等CRUD功能。'
             }, {
-              html: '主要参与XXXXXXX的静态页面开发工作，要求<mark>在支付宝环境下完全兼容</mark>。'
+              html: '重构<mark>球迷屋PC端全站</mark>的代码，更新为Laravel8.x的Blade语法，优化精简冗杂代码，提高网站性能。'
+            }, {
+              html: '主要参与公司产品「极速有料」「今天好料」的前端开发工作，完成小程序断网弱网重载，<mark>官网自适应首页（原生代码）</mark>等功能。项目采用技术栈WordPress+NAMP。',
+              project: [
+                {title: '极速有料h5', url: 'https://h.jsty.com'}, // 项目地址，（可选）
+                {title: '小程序：极速有料(微信、头条、百度、QQ)'}, // 项目地址
+                {title: '今天好料官网', url: 'https://hl.tiyipu.com/'}] // 项目地址
             }],
           }],
         // 项目经历
@@ -327,12 +352,14 @@ export default {
         //自我评价
         self: '自我评价自我评价自我评价自我评价自我评价',
       },
-      photoLoading: false,
+      photoLoading: false
     }
   },
   created() {
     console.log("感谢您这么好看还来看的我网站！")
-  },
+    console.log("一些碎碎念：因为现在还在学习的过程中，还没有自己的博客，代码片段也是随手扔到了CSDN（大概是因为不用审核吧），一些让我茅塞顿开的代码就会写下具体思路记录在掘金，现在还是一个只会前端的小辣鸡，等到时候学会写后端就可以自己做一个个人的开源博客把我的学习笔记和代码段全都丢上去了，加油！")
+  }
+  ,
   methods: {}
 }
 </script>
