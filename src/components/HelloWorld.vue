@@ -103,7 +103,7 @@
               <span>{{ item.school }}</span>
               <time>{{ item.time }}</time>
             </h3>
-            <p v-for="(list,key) in item.other" :key="key">{{ list.title }}
+            <p v-for="(list,key) in item.other" :key="key">{{ list.title }}：
               {{ list.content }}
             </p>
           </li>
@@ -223,9 +223,9 @@ export default {
     return {
       switchValue: false,
       infoData: {
-        name: '名字', // 名字
-        job: '工作', // 工作
-        address: '地址', // 地址
+        name: '李茜茜', // 名字
+        job: '前端开发工程师', // 工作
+        address: '广东惠州', // 地址
         sex: '女', // 性别
         age: '22', // 年龄
         // 基本等级
@@ -296,7 +296,6 @@ export default {
             }, {
               html: '配合中级前端进行企业端小程序的页面开发。',
               project: [
-                {title: 'pc端/m端', url: 'https://www.qiumiwu.com'}, // 项目地址，（可选）
                 {title: '小程序：源访客企业(微信)'}] // 项目地址
             }],
           },
@@ -306,7 +305,7 @@ export default {
             time: '2021.9-至今',
             detailList: [{
               link: ['https://blog.csdn.net/lcc0628/article/details/120156307?spm=1001.2014.3001.5501'],// 代码片段
-              html: '配合UI和后端，深度参与公司主线产品「球迷屋」web端、pc端、m端的迭代和开发工作，完成赛程列表<mark>WebSocket</mark>更新、CBA数据页、专题详情、动态视频列表、点击数据统计等功能，修复已知bug及优化代码若干。项目采用技术栈Taro + Vue + Jquery + Laravel实现前后端分离',
+              html: '配合UI和后端，深度参与公司主线产品「球迷屋」web端、pc端、m端的迭代和开发工作，完成赛程列表<mark>WebSocket</mark>更新、CBA数据页、专题详情、动态视频列表、点击数据统计等功能，<mark>小程序多端兼容</mark>，修复已知bug及优化代码若干。项目采用技术栈<mark>Taro + Vue + Jquery + Laravel</mark>实现前后端分离',
               project: [
                 {title: 'pc端/m端', url: 'https://www.qiumiwu.com'}, // 项目地址，（可选）
                 {title: '小程序：球迷屋(微信、头条、百度、QQ)'}] // 项目地址
@@ -315,11 +314,13 @@ export default {
             }, {
               html: '重构<mark>球迷屋PC端全站</mark>的代码，更新为Laravel8.x的Blade语法，优化精简冗杂代码，提高网站性能。'
             }, {
-              html: '主要参与公司产品「极速有料」「今天好料」的前端开发工作，完成小程序断网弱网重载，<mark>官网自适应首页（原生代码）</mark>等功能。项目采用技术栈WordPress+NAMP。',
+              html: '主要参与公司产品「极速有料」「今天好料」的前端开发工作，完成小程序断网弱网重载，<mark>官网自适应首页（原生代码）</mark>等功能。项目采用技术栈<mark>Taro + Vue + Jquery + Laravel</mark>。',
               project: [
                 {title: '极速有料h5', url: 'https://h.jsty.com'}, // 项目地址，（可选）
                 {title: '小程序：极速有料(微信、头条、百度、QQ)'}, // 项目地址
                 {title: '今天好料官网', url: 'https://hl.tiyipu.com/'}] // 项目地址
+            },{
+              html: '完成公司产品糖果助理小程序的<mark>Taro(React)转Taro(Vue)</mark>。',
             }],
           }],
         // 项目经历
@@ -353,7 +354,7 @@ export default {
             link: ['https://blog.csdn.net/lcc0628/article/details/123225136?spm=1001.2014.3001.5502']// 代码片段(可选)
           }],
         //自我评价
-        self: '自我评价自我评价自我评价自我评价自我评价',
+        self: '因为选择了自己所热爱的，所以不能辜负这份热爱，要沉得住气，一步一步往上爬，有足够的力量才能够承受未来的重量。',
       },
       photoLoading: false
     }
