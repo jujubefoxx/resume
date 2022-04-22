@@ -93,7 +93,7 @@
               <span>{{ item.school }}</span>
               <time>{{ item.time }}</time>
             </h3>
-            <p v-for="(list,key) in item.other" :key="key">{{ list.title }}
+            <p v-for="(list,key) in item.other" :key="key">{{ list.title }}：
               {{ list.content }}
             </p>
           </li>
@@ -116,7 +116,7 @@
                 <!--项目地址-->
                 <div v-if="list.project">
                   项目地址：
-                  <a :href="project.url||'javascript:;'" :target="project.url?'_blank':'_self'"
+                  <a :href="project.url||'javascript:;'" :target="project.url ? '_blank' : '_self'"
                      v-for="(project,i) in list.project"
                      class="container-main__link"
                      :key="i">
@@ -130,11 +130,11 @@
                 <template v-if="list.link">
                   <a :href="link" target="_blank" v-for="(link,num) in list.link" class="container-main__link"
                      :key="num">
+                    <i class="container-icon el-icon-link" aria-hidden="true"></i>
                     {{
                       list.link.length > 1 ? `[${num +
                       1}]` : ''
-                    }}
-                    <i class="container-icon el-icon-link" aria-hidden="true"></i>代码片段</a>
+                    }}代码片段</a>
                 </template>
               </li>
             </ul>
@@ -178,7 +178,7 @@
                   <a :href="link" target="_blank" v-for="(link,num) in item.link" class="container-main__link"
                      :key="num">
                     <i class="container-icon el-icon-link"
-                       aria-hidden="true"></i>代码片段{{ item.link.length > 1 ? `[${num + 1}]` : '' }}</a>
+                       aria-hidden="true"></i>{{ item.link.length > 1 ? `[${num + 1}]` : '' }}代码片段</a>
                 </template>
                 <br/>
                 <i class="container-icon el-icon-data-analysis" aria-hidden="true" v-if="item.result"></i>
