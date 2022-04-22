@@ -233,9 +233,6 @@ export default {
           {
             title: '英语等级',
             level: 'CET4'
-          }, {
-            title: '计算机等级',
-            level: '二级'
           },
           {
             title: '普通话等级',
@@ -256,7 +253,7 @@ export default {
         stack: [
           {
             alias: '前端',
-            value: 'Vue-cli+axios+router、jQuery、uni-app、Taro、SASS、LESS、Ajax、Bootstrap、Laravel(blade)、ElementUI、VantUI、TaroUI、ant-design-vue'
+            value: 'Vue-cli+axios+router、jQuery、uni-app、Taro、SASS、LESS、Ajax、Bootstrap、Laravel(Blade)'
           },
           // {
           //   alias: '后端',
@@ -264,7 +261,7 @@ export default {
           // },
           {
             alias: '其他',
-            value: 'Photoshop、git、C/C++、SAI、Excel、普通话(二甲)'
+            value: 'Photoshop、git、C/C++、SAI'
           },
         ],
         qrcode: [{title: 'wechat', img: wechat}, {title: 'CSDN', img: csdn}, {title: 'github', img: github}], // 二维码图片
@@ -305,7 +302,7 @@ export default {
             time: '2021.9-至今',
             detailList: [{
               link: ['https://blog.csdn.net/lcc0628/article/details/120156307?spm=1001.2014.3001.5501'],// 代码片段
-              html: '配合UI和后端，深度参与公司主线产品「球迷屋」web端、pc端、m端的迭代和开发工作，完成赛程列表<mark>WebSocket</mark>更新、CBA数据页、专题详情、动态视频列表、点击数据统计等功能，<mark>小程序多端兼容</mark>，修复已知bug及优化代码若干。项目采用技术栈<mark>Taro + Vue + Jquery + Laravel</mark>实现前后端分离',
+              html: '配合UI和后端，深度参与公司主线产品「球迷屋」web端、pc端、m端的迭代和开发工作，完成赛程列表<mark>WebSocket</mark>更新、CBA数据页、专题详情、动态视频列表、点击数据统计等功能，<mark>小程序多端兼容</mark>，修复已知bug及优化代码若干。项目采用技术栈<mark>Taro + Vue + Jquery + Laravel + Echarts</mark>实现前后端分离',
               project: [
                 {title: 'pc端/m端', url: 'https://www.qiumiwu.com'}, // 项目地址，（可选）
                 {title: '小程序：球迷屋(微信、头条、百度、QQ)'}] // 项目地址
@@ -336,7 +333,7 @@ export default {
           title: '华夏犬马APP',
           time: '2021.10-2022.1',
           stack: 'uni-app + uView + spring + mysql + git',
-          target: '实现一个集问卷、视频学习、帖子社区、即使通讯、求职招聘等多功能一体的企业、个人、顾问一端多角色APP',
+          target: '实现一个集问卷、视频学习、帖子社区、即时通讯、求职招聘等多功能一体的企业、个人、顾问一端多角色APP',
           team: '与java开发1人',
           contributionHTML: '分析需求使用<mark>Vue-cli+element-ui+Axios</mark>进行后台管理系统开发，功能包括学习视频上传，用户中心，角色管理等，并根据设计稿使用<mark>uni-app</mark>进行前台APP的开发，实现APP的所有需求功能。',
           file: {link: '/huaxiaquanma.apk', title: '华夏犬马.apk', type: 'apk'},
@@ -346,7 +343,7 @@ export default {
             title: '今天吃啥大转盘',
             time: '2022.3-至今',
             stack: 'Vue + Taro3(Vue) + Taro-UI-Vue',
-            target: '实现一个能够获取随机结果的大转盘并自主进行配置的转盘，h5端仅有转盘和配置功能，小程序端可以实现查询相关菜谱(持续更新)',
+            target: '实现一个能够获取随机结果并自主进行配置的转盘，h5端仅有转盘和配置功能，小程序端可以实现查询相关菜谱(持续更新)',
             team: '自己',
             contributionHTML: '使用<mark>Vue</mark>进行H5端的开发，完成转盘和转盘配置功能，后续迁移至小程序端，使用<mark>Taro3(Vue) + Taro-UI-Vue</mark>进行微信小程序端的开发，增加了菜谱功能等。',
             result: '单月新增用户量600人(微信小程序：今天吃啥大转盘)',// 效果(可选)
