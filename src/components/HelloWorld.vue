@@ -1,6 +1,6 @@
 <template>
   <article class="container">
-    <section class="container-side" id="side">
+    <section :class="['container-side',switchValue?'container-side--fixed':'']" id="side">
       <!-- 左栏固定开关-->
       <el-switch
           class="container-side__switch"
@@ -79,17 +79,7 @@
           </li>
         </ul>
       </div>
-      <!-- 二维码 -->
-      <section class="container-side__qrcode info-unit">
-        <h2><i class="container-icon el-icon-chat-round" aria-hidden="true"></i>二维码</h2>
-        <hr/>
-        <div class="container-side__qrcode-container">
-          <div class="container-side__qrcode-list" v-for="(img,index) in infoData.qrcode" :key="index">
-            <img style="width: 100%" :src="img.img" :alt="img.title">
-            <span>{{ img.title }}</span>
-          </div>
-        </div>
-      </section>
+
     </section>
     <section class="container-main">
       <!-- 教育经历 -->
@@ -124,7 +114,7 @@
               <li v-for="(list,key) in item.detailList" :key="key">
                 <div v-html="list.html"></div>
                 <!--项目地址-->
-                <div  v-if="list.project">
+                <div v-if="list.project">
                   项目地址：
                   <a :href="project.url||'javascript:;'" :target="project.url?'_blank':'_self'"
                      v-for="(project,i) in list.project"
@@ -206,6 +196,17 @@
         <p>
           {{ infoData.self }}
         </p>
+      </section>
+      <!-- 二维码 -->
+      <section class="container-main__qrcode info-unit">
+        <h2><i class="container-icon el-icon-chat-round" aria-hidden="true"></i>二维码</h2>
+        <hr/>
+        <div class="container-main__qrcode-container">
+          <div class="container-main__qrcode-list" v-for="(img,index) in infoData.qrcode" :key="index">
+            <img style="width: 100%" :src="img.img" :alt="img.title">
+            <span>{{ img.title }}</span>
+          </div>
+        </div>
       </section>
     </section>
   </article>

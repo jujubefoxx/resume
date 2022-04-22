@@ -10,23 +10,10 @@
     box-sizing: border-box;
     padding: 1rem;
 
-    &__qrcode {
-      &-container {
-        display: flex;
-        width: 100%;
-      }
-
-      &-list {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        img {
-          max-width: 400px;
-        }
-      }
+    &--fixed {
+      position: fixed;
     }
+
 
     &__photo {
       display: flex;
@@ -71,6 +58,24 @@
     box-shadow: 0 5px 20px #bbb;
     box-sizing: border-box;
     padding: 1rem;
+
+    &__qrcode {
+      &-container {
+        display: flex;
+        width: 100%;
+      }
+
+      &-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          max-width: 150px;
+        }
+      }
+    }
 
     &__link {
       margin-right: 6px;
