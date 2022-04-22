@@ -130,11 +130,10 @@
                 <template v-if="list.link">
                   <a :href="link" target="_blank" v-for="(link,num) in list.link" class="container-main__link"
                      :key="num">
-                    {{
+                    <i class="container-icon el-icon-link" aria-hidden="true"></i> {{
                       list.link.length > 1 ? `[${num +
                       1}]` : ''
-                    }}
-                    <i class="container-icon el-icon-link" aria-hidden="true"></i>代码片段</a>
+                    }}代码片段</a>
                 </template>
               </li>
             </ul>
@@ -320,7 +319,7 @@ export default {
                 {title: '极速有料h5', url: 'https://h.jsty.com'}, // 项目地址，（可选）
                 {title: '小程序：极速有料(微信、头条、百度、QQ)'}, // 项目地址
                 {title: '今天好料官网', url: 'https://hl.tiyipu.com/'}] // 项目地址
-            },{
+            }, {
               html: '完成公司产品糖果助理小程序的<mark>Taro(React)转Taro(Vue)</mark>。',
             }],
           }],
