@@ -1,4 +1,3 @@
-
 //公共部分
 .container-icon {
   font-size: 1.2em;
@@ -8,7 +7,6 @@ body {
   background: #e5e5e5 url(@/assets/images/background.png);
   width: 100%;
   overflow-x: hidden;
-  padding: 1rem 10% 0;
   box-sizing: border-box;
   font-size: .9em;
 
@@ -28,6 +26,7 @@ body {
     }
   }
 }
+
 h2 {
   font-size: 1.2em;
 }
@@ -74,10 +73,9 @@ mark {
 }
 
 
-
 // 右侧标题行跨行
 @media screen and (max-width: 1034px) {
-  body {
+  .container {
     padding: 1rem 0;
   }
 }
