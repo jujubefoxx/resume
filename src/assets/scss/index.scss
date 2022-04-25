@@ -15,9 +15,11 @@ body {
     background: url(@/assets/images/music.svg);
     background-size: 30px;
     z-index: 999;
+    cursor: pointer;
+    animation: circleRotate 5s infinite linear;
 
-    &--rotate {
-      animation: circleRotate 5s infinite linear;
+    &--paused {
+      animation-play-state: paused;
     }
 
     @keyframes circleRotate {

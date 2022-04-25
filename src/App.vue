@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div :class="['music',music.paused?'':'music--rotate']" ref="musicBtn" @click="clickMusic">
+    <div :class="['music',pause ? 'music--paused' : 'music--rotate']" ref="musicBtn" @click="clickMusic">
       <audio loop="loop" preload="auto" autoplay="autoplay" hidden id="audio"
              :src="musicUrl">
       </audio>
