@@ -1,6 +1,10 @@
 .container {
   padding: 1rem 10% 0;
 
+  &-icon {
+    font-size: 1.2em;
+  }
+
   // 侧边栏
   &-side {
     position: absolute;
@@ -130,6 +134,25 @@
     }
   }
 
+}
+
+// 6 plus
+@media screen and (max-width: 750px) {
+  .container {
+    padding: .5rem .5rem 0;
+
+    .container-side {
+      position: static;
+      width: 95%;
+      margin: 0 auto;
+    }
+
+    .container-main {
+      position: static;
+      width: 95%;
+      margin: 1.5rem auto 0;
+    }
+  }
 }
 
 //移动端适配，右侧时间跨行宽度

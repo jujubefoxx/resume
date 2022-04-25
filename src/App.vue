@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="music" ref="musicBtn" @click="clickMusic">
+    <div :class="['music',music.paused?'':'music--rotate']" ref="musicBtn" @click="clickMusic">
       <audio loop="loop" preload="auto" autoplay="autoplay" hidden id="audio"
              :src="musicUrl">
       </audio>
@@ -27,6 +27,7 @@ export default {
       musicUrl: '/backgroundMusic.mp3',
       music: {}, // 背景音乐
       musicInit: false, // 是否初始化音乐
+      pause: true,
       sideList: [{
         title: '源代码',
         link: 'https://github.com/jujubefoxx/homepage'
@@ -36,6 +37,7 @@ export default {
   mounted() {
     this.$nextTick(() => {
       this.music = document.getElementById("audio");//背景音乐对象
+      this.pause = this.music.paused
     })
   },
   components: {
@@ -44,8 +46,10 @@ export default {
   methods: {
     clickMusic() {
       if (this.music.paused) {
+        this.pause = false;
         this.music.play();
       } else {
+        this.pause = true;
         this.music.pause();
       }
     }
@@ -58,12 +62,5 @@ export default {
 @import "assets/scss/index";
 @import "assets/typo.css";
 
-.music {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background: url(@/assets/images/music.png);
-  background-size: 30px;
-}
 
 </style>
