@@ -11,7 +11,7 @@
 
       <!-- 个人肖像 -->
       <section class="container-side__photo">
-        <el-avatar :src="infoData.avatar">
+        <el-avatar :src="infoData.avatar" class="rotate-avatar">
           <img src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png"/>
         </el-avatar>
         <h1 class="container-side__photo-name">{{ infoData.name }}</h1>
