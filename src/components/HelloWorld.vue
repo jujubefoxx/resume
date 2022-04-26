@@ -1,6 +1,7 @@
 <template>
   <article class="container">
-    <section :class="['container-side',switchValue?'container-side--fixed':'']" id="side">
+    <section :class="['container-side','animate__animated','animate__fadeInLeft',switchValue?'container-side--fixed':'']"
+             id="side">
       <!-- 左栏固定开关-->
       <el-switch
           class="container-side__switch"
@@ -81,7 +82,7 @@
       </div>
 
     </section>
-    <section class="container-main">
+    <section class="container-main animate__animated animate__fadeInRight">
       <!-- 教育经历 -->
       <section class="container-main__edu info-unit">
         <h2>
@@ -130,7 +131,8 @@
                 <template v-if="list.link">
                   <a :href="link" target="_blank" v-for="(link,num) in list.link" class="container-main__link"
                      :key="num">
-                    <i class="container-icon el-icon-link" aria-hidden="true"></i> {{
+                    <i class="container-icon el-icon-link" aria-hidden="true"></i>
+                    {{
                       list.link.length > 1 ? `[${num +
                       1}]` : ''
                     }}代码片段</a>
