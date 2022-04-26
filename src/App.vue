@@ -6,6 +6,11 @@
       </audio>
     </div>
     <HelloWorld/>
+    <footer class="page-footer">
+      <p>© 2022 李CC/jujubefoxx 文档最后更新时间为
+        <time>2021年04月26日</time>
+      </p>
+    </footer>
     <!-- 侧栏 -->
     <aside>
       <ul>
@@ -62,5 +67,8 @@ export default {
 @import "assets/scss/index";
 @import "assets/typo.css";
 
-
+.page-footer {
+  margin-top: 20px;
+  text-align: center;
+}
 </style>
