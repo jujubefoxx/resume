@@ -1,7 +1,8 @@
 <template>
   <article class="container">
-    <section :class="['container-side','animate__animated','animate__fadeInLeft',switchValue?'container-side--fixed':'']"
-             id="side">
+    <section
+        :class="['container-side','animate__animated','animate__fadeInLeft',switchValue?'container-side--fixed':'']"
+        id="side">
       <!-- 左栏固定开关-->
       <el-switch
           class="container-side__switch"
@@ -11,7 +12,7 @@
 
       <!-- 个人肖像 -->
       <section class="container-side__photo">
-        <el-avatar :src="infoData.avatar">
+        <el-avatar :src="infoData.avatar" class="rotate-avatar">
           <img src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png"/>
         </el-avatar>
         <h1 class="container-side__photo-name">{{ infoData.name }}</h1>
