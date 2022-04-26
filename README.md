@@ -3,7 +3,7 @@
 - 布局和自适应样式参考自 https://gitee.com/itsay/resume 特别鸣谢！
 - 使用elementUI是因为想制作一个主题色为蓝色调的页面
 - 需要修改信息的直接在data里修改即可
-- 在线预览： https://jujubefoxx.github.io/resume/ http://cc905141352.3vhost.net/
+- 在线预览： https://jujubefoxx.github.io/resume/
 
 ## Project setup
 ```
