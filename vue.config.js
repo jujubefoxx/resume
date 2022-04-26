@@ -10,6 +10,7 @@ module.exports = defineConfig({
                 return args
             })
     },
+    publicPath: "./",
     pwa: {
         iconPaths: {
             favicon32: 'favicon.ico',
